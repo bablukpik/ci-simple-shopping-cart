@@ -14,9 +14,16 @@ class Order extends CI_Controller {
 	//Display all products
 	public function index()
 	{
+		//$this->cart->destroy();
 		$allProducts = $this->Order_m->getAllProducts();
-		
 		$this->load->view('order_page', ['allProducts'=>$allProducts]);
+	}
+
+	//Cart view
+	public function view_cart()
+	{
+		$this->load->view('cartView_page');
+
 	}
 
 	//Add products to cart or Buy products
@@ -31,8 +38,6 @@ class Order extends CI_Controller {
 		);
 
 		$this->cart->insert($data);
-		
-		redirect('order','refresh');
 	}
 
 	//update cart
@@ -69,7 +74,7 @@ class Order extends CI_Controller {
 	public function destroyCart()
 	{
 		$this->cart->destroy();
-		
+
 		redirect('order','refresh');
 	}
 
