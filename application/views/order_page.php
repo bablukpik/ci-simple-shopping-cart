@@ -33,7 +33,7 @@
 	        <th>Product Name</th>
 	        <th>Unit</th>
 	        <th>Rate</th>
-	        <th style="text-align:center">Total Amount</th>
+	        <th style="text-align:center">Sub Total</th>
 	        <th style="text-align:center;">Options</th>
 	</tr>
 
@@ -70,10 +70,10 @@
 
 	<?php endforeach; ?>
 		<tr>
-			<td colspan="3" style="text-align: right;">Sub Total : </td>
+			<td colspan="3" style="text-align: right;">Total Amount: </td>
 			<td style="text-align: right;">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
 			
-			<td style="text-align: center;">Clear</td>
+			<td style="text-align: center;"><?php echo anchor('order/destroyCart', 'Clear'); ?></td>
 		</tr>
 
 	</table>

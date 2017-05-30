@@ -65,6 +65,14 @@ class Order extends CI_Controller {
 		redirect('order/index');
 	}
 
+	//Destroy cart
+	public function destroyCart()
+	{
+		$this->cart->destroy();
+		
+		redirect('order','refresh');
+	}
+
 }
 
 /* End of file order.php */
