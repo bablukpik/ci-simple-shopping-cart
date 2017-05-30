@@ -33,8 +33,7 @@
 	        <th>Product Name</th>
 	        <th>Unit</th>
 	        <th>Rate</th>
-	        <th style="text-align:center">Qty</th>
-	        <th style="text-align:center;">Total Amount</th>
+	        <th style="text-align:center">Total Amount</th>
 	        <th style="text-align:center;">Options</th>
 	</tr>
 
@@ -64,13 +63,18 @@
 	                <td><?php echo form_input(array('name' => 'qty'.$i, 'value' => $items['qty'], 'size' => '10')); ?></td>
 	                <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
 	                <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
-	                <td style="text-align: right;">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
 	                <td style="text-align:center;"><?php echo anchor('order/removeProduct/'.$items['rowid'], 'X'); ?></td>
 	        </tr>
 
 	<?php $i++; ?>
 
 	<?php endforeach; ?>
+		<tr>
+			<td colspan="3" style="text-align: right;">Sub Total : </td>
+			<td style="text-align: right;">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+			
+			<td style="text-align: center;">Clear</td>
+		</tr>
 
 	</table>
 
