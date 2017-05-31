@@ -13,6 +13,8 @@ CREATE TABLE `products` (
   `unit_price` varchar(250) DEFAULT NULL,
   `total_unit` varchar(250) DEFAULT NULL,
   `description` text DEFAULT NULL,
+  `options` varchar(255) DEFAULT NULL,
+  `option_values` varchar(255) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL
 );
 
